@@ -1,0 +1,7 @@
+{
+  "name": "ionic-cap-react-sandbox-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
