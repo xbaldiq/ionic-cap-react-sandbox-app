@@ -1,3 +1,4 @@
+import React, { useEffect, useState, useRef } from "react";
 import {
   IonContent,
   IonHeader,
@@ -9,7 +10,7 @@ import ExploreContainer from "../components/ExploreContainer";
 import "./Home.css";
 import Map from "../components/Map";
 import { Geolocation } from "@capacitor/geolocation";
-import { useEffect } from "react";
+import ImagePicker from "../components/ImagePicker";
 
 const Home: React.FC = () => {
   const printCurrentPosition = async () => {
@@ -37,7 +38,8 @@ const Home: React.FC = () => {
             <IonTitle size="large">Blank</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <Map />
+        <ImagePicker />
+        {/* <Map /> */}
         {/* <ExploreContainer /> */}
       </IonContent>
     </IonPage>
