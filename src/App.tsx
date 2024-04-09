@@ -22,13 +22,17 @@ import "@ionic/react/css/display.css";
 /* Theme variables */
 import "./theme/variables.css";
 import "./theme/global.css";
+import Payment from "./pages/Payment";
+import Subscription from "./pages/Subscription";
 
 setupIonicReact();
 
 const App: React.FC = () => (
   <IonApp>
-    <IonReactRouter>
+    <Subscription />
+    {/* <IonReactRouter>
       <IonRouterOutlet>
+        <Subscription />
         <Route exact path="/home">
           <Home />
         </Route>
@@ -36,7 +40,7 @@ const App: React.FC = () => (
           <Redirect to="/home" />
         </Route>
       </IonRouterOutlet>
-    </IonReactRouter>
+    </IonReactRouter> */}
   </IonApp>
 );
 

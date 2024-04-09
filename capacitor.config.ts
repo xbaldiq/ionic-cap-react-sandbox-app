@@ -1,7 +1,7 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
+  appId: 'com.iapsandboxtestapp',
   appName: 'ionic-cap-react-sandbox-app',
   webDir: 'dist',
   server: {

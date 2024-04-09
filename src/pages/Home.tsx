@@ -11,6 +11,7 @@ import "./Home.css";
 import Map from "../components/Map";
 import { Geolocation } from "@capacitor/geolocation";
 import ImagePicker from "../components/ImagePicker";
+import Subscription from "./Subscription";
 
 const Home: React.FC = () => {
   const printCurrentPosition = async () => {
@@ -21,7 +22,7 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     (async () => {
-      await printCurrentPosition();
+      // await printCurrentPosition();
     })();
   }, []);
 
@@ -29,16 +30,17 @@ const Home: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Blank</IonTitle>
+          <IonTitle>Home</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Blank</IonTitle>
+            <IonTitle size="large">Home</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ImagePicker />
+        <Subscription />
+        {/* <ImagePicker /> */}
         {/* <Map /> */}
         {/* <ExploreContainer /> */}
       </IonContent>
