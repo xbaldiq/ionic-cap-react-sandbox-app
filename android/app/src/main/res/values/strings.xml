@@ -4,4 +4,5 @@
     <string name="title_activity_main">ionic-cap-react-sandbox-app</string>
     <string name="package_name">com.iapsandboxtestapp</string>
     <string name="custom_url_scheme">com.iapsandboxtestapp</string>
+    <string name="server_client_id">804666653135-n6oa1mriqdesjjkjk9js1o0i542t3hfa.apps.googleusercontent.com</string>
 </resources>
