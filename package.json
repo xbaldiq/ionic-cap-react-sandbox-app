@@ -19,6 +19,7 @@
     "serve": "ionic serve --no-open"
   },
   "dependencies": {
+    "@capacitor-community/apple-sign-in": "^5.0.0",
     "@capacitor/android": "5.7.0",
     "@capacitor/app": "5.0.7",
     "@capacitor/camera": "^5.0.9",

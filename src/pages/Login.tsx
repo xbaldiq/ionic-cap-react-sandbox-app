@@ -13,6 +13,11 @@ import {
   IonToolbar,
   isPlatform,
 } from "@ionic/react";
+import {
+  SignInWithApple,
+  SignInWithAppleResponse,
+  SignInWithAppleOptions,
+} from "@capacitor-community/apple-sign-in";
 
 const isAndroid = isPlatform("android");
 const isIOS = isPlatform("ios");
@@ -60,6 +65,7 @@ const Login = () => {
     })();
   }, []);
 
+  // GOOGLE SIGN-IN
   const onLogin = () => {
     GoogleAuth.signIn()
       .then((user: User) => {
@@ -87,6 +93,30 @@ const Login = () => {
       })
       .catch((err: any) => {
         console.log("🟥 err Authentication", err);
+      });
+  };
+
+  // APPLE SIGN-IN
+  const keyID = "86PXC8SL65";
+
+  const onLoginIOS = () => {
+    const options: SignInWithAppleOptions = {
+      // The appId defined in capacitor.config.ts
+      clientId: "com.app.inapppurchasesandbox",
+      // Ignored for iOS Platform
+      redirectURI: "",
+      // redirectURI: "http://localhost:5173/",
+      scopes: "email name",
+    };
+    SignInWithApple.authorize(options)
+      .then((result: SignInWithAppleResponse) => {
+        console.log("🏁 onLoginIOS", result);
+        setUser(result);
+        // Handle user information
+        // Validate token with server and create new session
+      })
+      .catch((error) => {
+        console.log("🟥 err onLogin", err);
       });
   };
 
@@ -133,6 +163,17 @@ const Login = () => {
           >
             Refresh
           </div>
+
+          <div className="p-2" />
+
+          <div
+            onClick={() => {
+              onLoginIOS();
+            }}
+            className="py-2 px-4 rounded bg-blue-500 text-center text-white"
+          >
+            login apple button here
+          </div>
         </div>
       </IonContent>
     </IonPage>
@@ -140,6 +181,25 @@ const Login = () => {
 };
 
 export default Login;
+
+/**
+ * ios apple login
+ * 
+
+authorizationCode: "c78921148aad147d2a08148cbb86b2f78.0.srss.Ezj6SJ3I0JLnZuCxGSFlAQ"
+
+email: "iqbaldhiaa@gmail.com"
+
+familyName: "A"
+
+givenName: "Iqbal"
+
+identityToken: "eyJraWQiOiJweWFSUXBBYm5ZIiwiYWxnIjoiUlMyNTYifQ.eyJpc3MiOiJodHRwczovL2FwcGxlaWQuYXBwbGUuY29tIiwiYXVkIjoiY29tLmFwcC5pbmFwcHB1cmNoYXNlc2FuZGJve…"
+
+user: "000122.0aaed9e4069a4b71a3b0a2dd573884ca.0102"
+
+
+ */
 
 /**
  * 

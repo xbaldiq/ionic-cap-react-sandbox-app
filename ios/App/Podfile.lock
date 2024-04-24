@@ -11,6 +11,8 @@ PODS:
     - Capacitor
   - CapacitorCamera (5.0.9):
     - Capacitor
+  - CapacitorCommunityAppleSignIn (5.0.0):
+    - Capacitor
   - CapacitorCordova (5.7.0)
   - CapacitorGeolocation (5.0.7):
     - Capacitor
@@ -38,6 +40,7 @@ DEPENDENCIES:
   - "Capacitor (from `../../node_modules/@capacitor/ios`)"
   - "CapacitorApp (from `../../node_modules/@capacitor/app`)"
   - "CapacitorCamera (from `../../node_modules/@capacitor/camera`)"
+  - "CapacitorCommunityAppleSignIn (from `../../node_modules/@capacitor-community/apple-sign-in`)"
   - "CapacitorCordova (from `../../node_modules/@capacitor/ios`)"
   - "CapacitorGeolocation (from `../../node_modules/@capacitor/geolocation`)"
   - "CapacitorHaptics (from `../../node_modules/@capacitor/haptics`)"
@@ -60,6 +63,8 @@ EXTERNAL SOURCES:
     :path: "../../node_modules/@capacitor/app"
   CapacitorCamera:
     :path: "../../node_modules/@capacitor/camera"
+  CapacitorCommunityAppleSignIn:
+    :path: "../../node_modules/@capacitor-community/apple-sign-in"
   CapacitorCordova:
     :path: "../../node_modules/@capacitor/ios"
   CapacitorGeolocation:
@@ -80,6 +85,7 @@ SPEC CHECKSUMS:
   Capacitor: fc155ee2ee45a2093d716f13cf5aa5a865e2d85a
   CapacitorApp: 17fecd0e6cb23feafac7eb0939417389038b0979
   CapacitorCamera: 4892c5c392f60039d853dde78bc50ba19fbd113e
+  CapacitorCommunityAppleSignIn: eafdd59b18b38161fa5cceee7b0e31312b122958
   CapacitorCordova: e825fce1a2e14e4b5730641c7e098dccf74397b7
   CapacitorGeolocation: 918a292459542bcce98433f9e7c7909f8c72838a
   CapacitorHaptics: 7c7c206f0c96a628fed073830c96d28c4b2e772e
@@ -91,6 +97,6 @@ SPEC CHECKSUMS:
   GTMAppAuth: 0ff230db599948a9ad7470ca667337803b3fc4dd
   GTMSessionFetcher: 3a63d75eecd6aa32c2fc79f578064e1214dfdec2
 
-PODFILE CHECKSUM: a7b0ddcedc25e1564fe9f1a078d236b8f7d9bbe8
+PODFILE CHECKSUM: bbbfdde3e4f3e2b4cceead2bc61604800c5d3ad1
 
 COCOAPODS: 1.14.3
