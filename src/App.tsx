@@ -39,13 +39,14 @@ import Subscription from "./pages/Subscription";
 import ExploreContainer from "./components/ExploreContainer";
 import Login from "./pages/Login";
 import Map from "./components/Map";
+import Notification from "./pages/Notification";
 
 setupIonicReact();
 
 // social login
 const App: React.FC = () => (
   <IonApp>
-    <Map />
+    <Notification />
   </IonApp>
 );
 // const App: React.FC = () => (

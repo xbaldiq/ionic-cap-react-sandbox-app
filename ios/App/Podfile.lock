@@ -20,6 +20,8 @@ PODS:
     - Capacitor
   - CapacitorKeyboard (5.0.8):
     - Capacitor
+  - CapacitorPushNotifications (6.0.0):
+    - Capacitor
   - CapacitorStatusBar (5.0.7):
     - Capacitor
   - CodetrixStudioCapacitorGoogleAuth (0.0.1):
@@ -45,6 +47,7 @@ DEPENDENCIES:
   - "CapacitorGeolocation (from `../../node_modules/@capacitor/geolocation`)"
   - "CapacitorHaptics (from `../../node_modules/@capacitor/haptics`)"
   - "CapacitorKeyboard (from `../../node_modules/@capacitor/keyboard`)"
+  - "CapacitorPushNotifications (from `../../node_modules/@capacitor/push-notifications`)"
   - "CapacitorStatusBar (from `../../node_modules/@capacitor/status-bar`)"
   - "CodetrixStudioCapacitorGoogleAuth (from `../../node_modules/@codetrix-studio/capacitor-google-auth`)"
   - CordovaPlugins (from `../capacitor-cordova-ios-plugins`)
@@ -73,6 +76,8 @@ EXTERNAL SOURCES:
     :path: "../../node_modules/@capacitor/haptics"
   CapacitorKeyboard:
     :path: "../../node_modules/@capacitor/keyboard"
+  CapacitorPushNotifications:
+    :path: "../../node_modules/@capacitor/push-notifications"
   CapacitorStatusBar:
     :path: "../../node_modules/@capacitor/status-bar"
   CodetrixStudioCapacitorGoogleAuth:
@@ -90,6 +95,7 @@ SPEC CHECKSUMS:
   CapacitorGeolocation: 918a292459542bcce98433f9e7c7909f8c72838a
   CapacitorHaptics: 7c7c206f0c96a628fed073830c96d28c4b2e772e
   CapacitorKeyboard: aec619a578235c6ce279075009a2689c2cf5c42c
+  CapacitorPushNotifications: e18636e8a96f1d70b4c669e21c730e995bf5e5c9
   CapacitorStatusBar: f390fbb49b82ffb754ea4b3cf71dc8b048baf3e7
   CodetrixStudioCapacitorGoogleAuth: fcce058390347c1ce5d8ac4764bdf1f5c1ee233b
   CordovaPlugins: 146ec091cc8c269c045cf030520df3c6da81db2a
@@ -97,6 +103,6 @@ SPEC CHECKSUMS:
   GTMAppAuth: 0ff230db599948a9ad7470ca667337803b3fc4dd
   GTMSessionFetcher: 3a63d75eecd6aa32c2fc79f578064e1214dfdec2
 
-PODFILE CHECKSUM: bbbfdde3e4f3e2b4cceead2bc61604800c5d3ad1
+PODFILE CHECKSUM: 4ccaf7f2c02d2e48bad1b82efea83319178d09a3
 
 COCOAPODS: 1.14.3
