@@ -1,4 +1,5 @@
 import "./ExploreContainer.css";
+import Map from "./Map";
 
 interface ContainerProps {}
 

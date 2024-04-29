@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1020702588180",
+    "project_id": "auth-sandbox-54c6a",
+    "storage_bucket": "auth-sandbox-54c6a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1020702588180:android:a4277874e3462ab7879601",
+        "android_client_info": {
+          "package_name": "com.iapsandboxtestapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDr5qdQ4Z5UY1Cot09VtK5k0K0U6wO5hlk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
