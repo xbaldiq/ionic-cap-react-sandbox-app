@@ -38,13 +38,14 @@ import Payment from "./pages/Payment";
 import Subscription from "./pages/Subscription";
 import ExploreContainer from "./components/ExploreContainer";
 import Login from "./pages/Login";
+import Map from "./components/Map";
 
 setupIonicReact();
 
 // social login
 const App: React.FC = () => (
   <IonApp>
-    <Login />
+    <Map />
   </IonApp>
 );
 // const App: React.FC = () => (
