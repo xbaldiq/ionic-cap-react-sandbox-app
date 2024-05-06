@@ -11,10 +11,8 @@
     "test.e2e": "cypress run",
     "test.unit": "vitest",
     "lint": "eslint",
-    "android": "npx cap sync && npx cap run android -l --external",
-    "ionic-ios": "npx cap sync && ionic capacitor run ios -l --external",
-    "ionic-android": "npx cap sync && ionic capacitor run android -l --external",
-    "ios": "npx cap sync && npx cap run ios -l --external",
+    "android": "npx cap sync && ionic capacitor run android -l --external",
+    "ios": "npx cap sync && ionic capacitor run ios -l --external",
     "ios-device": "npm run build && npx cap sync && npx cap run ios -l --external --target=00008110-00190DE43662401E --host=localhost:5173",
     "serve": "ionic serve --no-open"
   },

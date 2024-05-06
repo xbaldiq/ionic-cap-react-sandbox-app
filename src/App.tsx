@@ -11,7 +11,14 @@ import {
 } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 
-import { playCircle, radio, library, search } from "ionicons/icons";
+import {
+  playCircle,
+  radio,
+  flame,
+  map,
+  logIn,
+  notifications,
+} from "ionicons/icons";
 
 import Home from "./pages/Home";
 
@@ -38,46 +45,83 @@ import Payment from "./pages/Payment";
 import Subscription from "./pages/Subscription";
 import ExploreContainer from "./components/ExploreContainer";
 import Login from "./pages/Login";
-import Map from "./components/Map";
 import Notification from "./pages/Notification";
+import MapContainer from "./pages/Map";
+import CapacitorModule from "./pages/CapacitorModule";
 
 setupIonicReact();
 
-// social login
 const App: React.FC = () => (
   <IonApp>
-    <Notification />
+    <IonReactRouter>
+      <IonTabs>
+        <IonRouterOutlet>
+          <Redirect exact path="/" to="/home" />
+          <Route path="/home" render={() => <Home />} exact={true} />
+
+          <Route
+            path="/capacitor-module"
+            render={() => <CapacitorModule />}
+            exact={true}
+          />
+
+          <Route path="/login" render={() => <Login />} exact={true} />
+
+          <Route path="/map" render={() => <MapContainer />} exact={true} />
+
+          <Route
+            path="/subscription"
+            render={() => <Subscription />}
+            exact={true}
+          />
+
+          <Route
+            path="/notification"
+            render={() => <Notification />}
+            exact={true}
+          />
+        </IonRouterOutlet>
+
+        <IonTabBar
+          slot="bottom"
+          style={{
+            overflowX: "scroll",
+            justifyContent: "left",
+          }}
+        >
+          <IonTabButton tab="home" href="/home">
+            <IonIcon icon={playCircle} />
+            <IonLabel>Home</IonLabel>
+          </IonTabButton>
+
+          <IonTabButton tab="capacitorModule" href="/capacitor-module">
+            <IonIcon icon={radio} />
+            <IonLabel>Capacitor Module</IonLabel>
+          </IonTabButton>
+
+          <IonTabButton tab="login" href="/login">
+            <IonIcon icon={logIn} />
+            <IonLabel>Login</IonLabel>
+          </IonTabButton>
+
+          <IonTabButton tab="map" href="/map">
+            <IonIcon icon={map} />
+            <IonLabel>Map</IonLabel>
+          </IonTabButton>
+
+          <IonTabButton tab="subscription" href="/subscription">
+            <IonIcon icon={flame} />
+            <IonLabel>Subscription</IonLabel>
+          </IonTabButton>
+
+          <IonTabButton tab="notification" href="/notification">
+            <IonIcon icon={notifications} />
+            <IonLabel>Notification</IonLabel>
+          </IonTabButton>
+        </IonTabBar>
+      </IonTabs>
+    </IonReactRouter>
   </IonApp>
 );
-// const App: React.FC = () => (
-//   <IonApp>
-//     {/* <Subscription /> */}
-//     <IonReactRouter>
-//       <IonTabs>
-//         <IonRouterOutlet>
-//           <Redirect exact path="/" to="/home" />
-//           <Route
-//             path="/home"
-//             render={() => <ExploreContainer />}
-//             exact={true}
-//           />
-//           <Route path="/payment" render={() => <Payment />} exact={true} />
-//         </IonRouterOutlet>
-
-//         <IonTabBar slot="bottom">
-//           <IonTabButton tab="home" href="/home">
-//             <IonIcon icon={playCircle} />
-//             <IonLabel>Explorer</IonLabel>
-//           </IonTabButton>
-
-//           <IonTabButton tab="payment" href="/payment">
-//             <IonIcon icon={radio} />
-//             <IonLabel>Payment</IonLabel>
-//           </IonTabButton>
-//         </IonTabBar>
-//       </IonTabs>
-//     </IonReactRouter>
-//   </IonApp>
-// );
 
 export default App;

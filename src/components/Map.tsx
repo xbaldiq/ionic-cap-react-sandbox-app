@@ -19,13 +19,22 @@ import {
   IonPage,
   IonTitle,
   IonToolbar,
+  useIonViewDidEnter,
 } from "@ionic/react";
 
 import { HeatmapLayer } from "react-leaflet-heatmap-layer-v3";
 
 //todo NEXT: implement heatmap with data from airhealth
 
+/**
+ * Trigger a 'resize' event when Page has finished rendering and animating, so leaflet map can read a consistent height value.
+ */
+
 function Map() {
+  useIonViewDidEnter(() => {
+    window.dispatchEvent(new Event("resize"));
+  });
+
   return (
     <IonPage>
       <IonHeader>
@@ -34,13 +43,37 @@ function Map() {
         </IonToolbar>
       </IonHeader>
       <IonContent>
+        {/* <div className="h-screen w-screen">
+          <MapContainer
+            className="min-h-screen min-w-screen h-screen w-screen w-full h-full"
+            // className="min-h-screen min-w-screen"
+            // className="h-screen w-screen"
+            center={[51.505, -0.09]}
+            zoom={14}
+            scrollWheelZoom={false}
+          >
+            <TileLayer
+              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+            <Marker position={[51.505, -0.09]}>
+              <Popup>
+                A pretty CSS3 popup. <br /> Easily customizable.
+              </Popup>
+            </Marker>
+          </MapContainer>
+        </div> */}
+
         <div>
           <MapContainer
             className="h-screen w-screen"
             // className="min-h-screen min-w-screen"
-            center={[48.137154, 11.576124]}
-            // center={[51.505, -0.09]}
-            zoom={13}
+            // className="min-h-screen min-w-screen"
+            center={[51.505, -0.09]}
+            zoom={14}
+            // center={[48.137154, 11.576124]}
+            // // center={[51.505, -0.09]}
+            // zoom={13}
             // @ts-ignore
             gestureHandling={true}
             touchZoom={true}
@@ -69,15 +102,6 @@ function Map() {
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-            {/* <TileLayer
-              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
-              url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
-            /> */}
-            {/* <Marker position={[51.505, -0.09]}>
-            <Popup>
-              A pretty CSS3 popup. <br /> Easily customizable.
-            </Popup>
-          </Marker> */}
           </MapContainer>
         </div>
       </IonContent>

@@ -5,6 +5,7 @@ import {
   IonHeader,
   IonPage,
   IonTitle,
+  IonToast,
   IonToolbar,
 } from "@ionic/react";
 import React, { useEffect } from "react";
@@ -59,7 +60,11 @@ const Notification = () => {
   };
 
   const checkPermissions = async () => {
-    await PushNotifications.checkPermissions();
+    try {
+      await PushNotifications.checkPermissions();
+    } catch (e) {
+      console.log("checkPermission ->>", e);
+    }
   };
 
   useEffect(() => {

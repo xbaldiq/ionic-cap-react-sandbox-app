@@ -3,6 +3,7 @@ import { Capacitor } from "@capacitor/core";
 import "cordova-plugin-purchase/www/store.js";
 import useIsMounted from "../utils/hooks/isUseMounted";
 import _ from "lodash";
+import Page from "../components/Page";
 
 // change the productid to your own productis from google play console and apple developer store
 
@@ -180,36 +181,40 @@ const Subscription = () => {
   };
 
   return (
-    <div>
-      <p className="text-xl text-center">Subscription: {`${isOwned}`}</p>
-      <p className="text-xl text-center">Renewal: {`${isOwned}`}</p>
+    <Page title={"Subscription"}>
+      <div>
+        <p className="text-xl text-center">Subscription: {`${isOwned}`}</p>
+        <p className="text-xl text-center">Renewal: {`${isOwned}`}</p>
 
-      {_.map(iapProducts, (product) => {
-        console.log("🟢 product", product);
-        return (
-          <div key={product.id} className="bg-gray-100 p-2 rounded">
-            <h1>{product?.title}</h1>
-            <p>{product?.description ? `${product.description || ""}` : ""}</p>
-            <pre>{product?.offers?.[0].pricingPhases?.[0].price}</pre>
-            <button
-              className="btn btn-primary btn-block mt-1"
-              onClick={() => buyProduct(product, product.id)}
-            >
-              Purchase Product
-            </button>
-          </div>
-        );
-      })}
+        {_.map(iapProducts, (product) => {
+          console.log("🟢 product", product);
+          return (
+            <div key={product.id} className="bg-gray-100 p-2 rounded">
+              <h1>{product?.title}</h1>
+              <p>
+                {product?.description ? `${product.description || ""}` : ""}
+              </p>
+              <pre>{product?.offers?.[0].pricingPhases?.[0].price}</pre>
+              <button
+                className="btn btn-primary btn-block mt-1"
+                onClick={() => buyProduct(product, product.id)}
+              >
+                Purchase Product
+              </button>
+            </div>
+          );
+        })}
 
-      <div className="flex align-center">
-        <button
-          className="btn btn-link btn-block mt-1 bg-green-100 p-2 rounded"
-          onClick={() => restoreProduct()}
-        >
-          Restore Product
-        </button>
+        <div className="flex align-center">
+          <button
+            className="btn btn-link btn-block mt-1 bg-green-100 p-2 rounded"
+            onClick={() => restoreProduct()}
+          >
+            Restore Product
+          </button>
+        </div>
       </div>
-    </div>
+    </Page>
   );
 };
 

@@ -39,10 +39,7 @@ const Home: React.FC = () => {
             <IonTitle size="large">Home</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <Subscription />
-        {/* <ImagePicker /> */}
-        {/* <Map /> */}
-        {/* <ExploreContainer /> */}
+        <ExploreContainer />
       </IonContent>
     </IonPage>
   );
